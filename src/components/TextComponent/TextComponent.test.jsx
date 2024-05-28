@@ -14,6 +14,7 @@ describe('<TextComponent />', () => {
       .c0 {
         font-size: 2.4rem;
       }
+
       <p
         class="c0"
       >

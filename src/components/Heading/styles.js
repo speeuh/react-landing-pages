@@ -7,29 +7,29 @@ const titleSize = {
   medium: (theme) => css`
     font-size: ${theme.font.sizes.large};
   `,
-  large: (theme) => css`
+  big: (theme) => css`
     font-size: ${theme.font.sizes.xlarge};
   `,
   huge: (theme) => css`
     font-size: ${theme.font.sizes.xhuge};
-    ${mediaFontSize(theme)};
+    ${mediaFont(theme)};
   `,
 };
 
-const mediaFontSize = (theme) => css`
+const mediaFont = (theme) => css`
   @media ${theme.media.lteMedium} {
     font-size: ${theme.font.sizes.xlarge};
   }
 `;
 
-const titleUppercase = (uppercase) => css`
+const titleCase = (uppercase) => css`
   text-transform: ${uppercase ? 'uppercase' : 'none'};
 `;
 
 export const Title = styled.h1`
-  ${({ theme, fontLight, size, uppercase }) => css`
-    color: ${fontLight ? theme.colors.white : theme.colors.primaryColor};
-    ${titleSize[size](theme)}
-    ${titleUppercase(uppercase)}
+  ${({ theme, colorDark, size, uppercase }) => css`
+    color: ${colorDark ? theme.colors.primaryColor : theme.colors.white};
+    ${titleSize[size](theme)};
+    ${titleCase(uppercase)};
   `}
 `;

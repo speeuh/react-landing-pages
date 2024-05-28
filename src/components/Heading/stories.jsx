@@ -1,10 +1,10 @@
-import Heading from './index';
+import { Heading } from '.';
 
 export default {
   title: 'Heading',
   component: Heading,
   args: {
-    children: 'Não sei',
+    children: 'O texto está escuro',
   },
   argTypes: {
     children: { type: 'string' },
@@ -26,5 +26,6 @@ Light.parameters = {
 };
 
 Dark.args = {
-  fontLight: true,
+  children: 'O texto está claro',
+  colorDark: false,
 };
